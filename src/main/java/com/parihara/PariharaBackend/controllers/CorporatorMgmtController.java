@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
  */
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,7 @@ public class CorporatorMgmtController {
 	private CorporatorService corporatorService;
 	
 	@GetMapping("/allCorporators")
+	@CrossOrigin
 	public ResponseEntity<String> getAllCorporatorDetails() throws Exception {
 		
 		JSONObject responseJson = new JSONObject();
@@ -46,6 +48,7 @@ public class CorporatorMgmtController {
 	}
 	
 	@PostMapping("/registerCorporator")
+	@CrossOrigin
 	public ResponseEntity<String> registerCorporator(@RequestBody CorporatorDetailsDto corporatorDetailsDto) throws CorporatorException {
 		
 		JSONObject responseJson = new JSONObject();
